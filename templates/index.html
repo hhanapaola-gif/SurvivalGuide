@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SURVIVAL GUIDE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="overlay">
+        <div class="container py-5">
+            <h1 class="text-center main-title mb-5">
+                SURVIVAL GUIDE
+            </h1>
+
+            <p class="text-center intro-text mb-5">
+                Bienvenido aventurero...
+                Deberás superar cada desafío para dominar los secretos de la Programación móvil y obtener una buena experiencia en este recorrido.
+                Mucha suerte!
+            </p>
+
+            <div class="row g-4">
+                {% for section in sections %}
+                    <div class="col-md-6">
+                        <div class="card custom-card h-100">
+                            <div class="card-body custom-card-body">
+                                <div class="card-icon">
+                                    <img
+                                        src="{{ url_for('static', filename='img/' + section.image) }}"
+                                        class="section-image"
+                                    >
+                                </div>
+
+                                <div class="card-content">
+                                    <h3 class="card-title mb-4">
+                                        {{ section.title }}
+                                    </h3>
+                                    {% if section.id in unlocked %}
+                                        <a href="/section/{{ section.id }}"
+                                            class="btn btn-warning btn-lg">
+                                            ENTRAR
+                                        </a>
+
+                                    {% else %}
+                                        <button class="btn btn-secondary btn-lg" disabled>
+                                            BLOQUEADO
+                                        </button>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

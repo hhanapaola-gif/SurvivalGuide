@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ section.title }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="overlay">
+        <div class="container py-5">
+            <h1 class="text-center main-title mb-5">
+                {{ section.title }}
+            </h1>
+
+            <div class="card custom-card mb-5">
+                <div class="card-body">
+                    <pre class="content-text">
+
+{{ section.content }}
+
+                    </pre>
+                </div>
+            </div>
+
+            <div class="card question-card">
+                <div class="card-body">
+                    <h3 class="challenge-title mb-4 text-center">
+                        Prueba del aventurero
+                    </h3>
+                    <form method="POST">
+                        {% for q in section.questions %}
+                            <div class="mb-4">
+                                <label class="form-label question-label">
+                                    {{ q.question }}
+                                </label>
+                                <input
+                                    type="text"
+                                    name="q{{ loop.index0 }}"
+                                    class="form-control form-control-lg"
+                                    required
+                                >
+                            </div>
+
+                        {% endfor %}
+
+                        <div class="form-check mb-4">
+                            <input
+                                class="form-check-input"
+                                type="checkbox"
+                                name="commit"
+                                id="commitCheck"
+                            >
+                            <label class="form-check-label" for="commitCheck">
+                                Acepto el compromiso y seguiré las reglas de esta sección para tener un gran viaje.
+                            </label>
+                        </div>
+
+                        <div class="d-grid">
+                            <button class="btn btn-warning btn-lg">
+                                Validar respuestas
+                            </button>
+                        </div>
+                    </form>
+
+                    {% if passed %}
+
+                        <div class="alert alert-success mt-4 text-center">
+                            Sección completada exitosamente! Has desbloqueado el siguiente desafío.
+                        </div>
+
+                    {% elif score > 0 %}
+
+                        <div class="alert alert-danger mt-4 text-center">
+                            Ouh! Debes responder correctamente ambas preguntas para poder avanzar.
+                        </div>
+
+                    {% endif %}
+
+                    <div class="text-center mt-4">
+                        <a href="/" class="btn btn-light">
+                            Volver al mapa
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
