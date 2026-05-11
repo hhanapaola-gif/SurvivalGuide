@@ -1,0 +1,241 @@
+/* FONDO GENERAL DE LA PÁGINA */
+body {
+    background: linear-gradient(
+        135deg,
+        #0f172a,
+        #1e1b4b,
+        #0f766e
+    );
+
+    min-height: 100vh;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.container {
+    max-width: 95%;
+}
+
+/* CAPA GENERAL */
+.overlay {
+    min-height: 100vh;
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+/* LOGO PRINCIPAL */
+.main-logo {
+    width: 140px;
+    display: block;
+    margin: 0 auto 25px auto;
+    object-fit: contain;
+    border-radius: 25px;
+}
+
+/* TÍTULO PRINCIPAL */
+.main-title {
+    font-size: 4.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #d8b4fe;
+    margin-bottom: 35px;
+    line-height: 1.1;
+}
+
+/* TEXTO DE INTRODUCCIÓN */
+.intro-text {
+    font-size: 1.4rem;
+    max-width: 1100px;
+    margin: auto;
+    margin-bottom: 55px;
+    color: #e2e8f0;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* TARJETAS DE LAS SECCIONES */
+.custom-card {
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid #818cf8;
+    border-radius: 24px;
+    transition: 0.3s ease;
+    padding: 35px;
+    min-height: 230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* EFECTO AL PASAR EL CURSOR */
+.custom-card:hover {
+    transform: translateY(-4px);
+}
+
+/* CONTENIDO INTERNO DE LAS TARJETAS */
+.custom-card-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+}
+
+/* CONTENEDOR DE IMÁGENES */
+.card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* IMÁGENES DE CADA SECCIÓN */
+.section-image {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+}
+
+/* CONTENIDO DE TEXTO Y BOTONES */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* TÍTULOS DE LAS TARJETAS */
+.card-title {
+    color: #d8b4fe;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* TEXTO DEL CONTENIDO */
+.content-text {
+    white-space: pre-wrap;
+    color: #e2e8f0;
+    font-size: 1.7rem;
+    line-height: 2;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+}
+
+/* TARJETA DE PREGUNTAS */
+.question-card {
+    background-color: rgba(15, 23, 42, 0.92);
+    border: 1px solid #14b8a6;
+    border-radius: 24px;
+    padding: 50px;
+}
+
+/* TÍTULO DE PRUEBA DEL AVENTURERO */
+.challenge-title {
+    color: #ffffff !important;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 35px;
+}
+
+/* PREGUNTAS */
+.question-label {
+    color: #ddd6fe;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* INPUTS */
+.form-control {
+    background-color: rgba(30, 41, 59, 0.9);
+    color: white;
+    border: 1px solid #64748b;
+    padding: 18px;
+    margin-top: 15px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+}
+
+/* INPUTS AL SELECCIONAR */
+.form-control:focus {
+    background-color: rgba(30, 41, 59, 1);
+    color: white;
+    border-color: #14b8a6;
+    box-shadow: none;
+}
+
+/* BOTÓN ENTRAR */
+.btn-warning {
+    background: linear-gradient(
+        45deg,
+        #8b5cf6,
+        #3b82f6,
+        #14b8a6
+    );
+    border: none;
+    color: white;
+    font-weight: bold;
+    width: 200px;
+    height: 55px;
+    border-radius: 14px;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* EFECTO DEL BOTÓN ENTRAR */
+.btn-warning:hover {
+    opacity: 0.92;
+}
+
+/* BOTÓN BLOQUEADO */
+.btn-secondary {
+    background-color: #475569;
+    border: none;
+    width: 200px;
+    height: 55px;
+    border-radius: 14px;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* BOTÓN VOLVER */
+.btn-light {
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* ALERTA DE ÉXITO */
+.alert-success {
+    background-color: rgba(20, 184, 166, 0.15);
+    border: 1px solid #14b8a6;
+    color: #ccfbf1;
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 1.2rem;
+}
+
+/* ALERTA DE ERROR */
+.alert-danger {
+    background-color: rgba(139, 92, 246, 0.15);
+    border: 1px solid #a78bfa;
+    color: #ede9fe;
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 1.2rem;
+}
+
+/* TEXTO DEL CHECKBOX */
+.form-check-label {
+    color: white;
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
